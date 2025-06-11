@@ -1,0 +1,190 @@
+html {
+    /* Garante que a barra de rolagem vertical sempre apareça, se o conteúdo for maior que a tela */
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #000; /* Fundo preto base */
+    color: #fff; /* Cor do texto branco */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* Ajuste para que o body possa rolar com o conteúdo */
+    min-height: 100%; /* Permite que o body se expanda com o conteúdo */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    /* REMOVIDO: overflow: hidden; -> Agora está no html */
+}
+
+header {
+    padding: 40px 20px;
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ff69b4; /* Rosa choque para o título */
+    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5); /* Sombra para o texto */
+}
+
+main {
+    flex-grow: 1; /* Permite que o main cresça e ocupe o espaço restante */
+    width: 90%;
+    max-width: 900px; /* Limita a largura máxima do conteúdo */
+    padding: 20px;
+    /* Adiciona padding superior para evitar que o conteúdo seja cortado pelo cabeçalho */
+    padding-top: 80px; /* Ajuste este valor se a parte de cima ainda estiver cortada */
+    position: relative; /* Para garantir que o conteúdo fique acima dos corações */
+    z-index: 1; /* Coloca o conteúdo do site acima dos corações */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo um pouco mais opaco para as seções */
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra suave */
+}
+
+section h2 {
+    font-size: 2.2em;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px;
+}
+
+#countdown {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff69b4;
+    margin-top: 20px;
+}
+
+#countdown span {
+    display: inline-block; /* Permite aplicar largura mínima */
+    min-width: 30px;
+}
+
+/* Estilos para o Carrossel */
+#photo-carousel .carousel-container {
+    position: relative; /* Essencial para posicionar as imagens uma em cima da outra */
+    height: 400px; /* Altura fixa para o carrossel */
+    overflow: hidden; /* Garante que elementos fora do container não apareçam */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex; /* Para centralizar o item ativo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para cada imagem dentro do carrossel */
+.carousel-item {
+    width: 100%;
+    max-height: 400px; /* Garante que a imagem não ultrapasse a altura do container */
+    object-fit: contain; /* Ajusta a imagem dentro do contêiner sem cortá-la */
+    position: absolute; /* Posiciona as imagens uma em cima da outra */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Esconde todas as imagens por padrão */
+    transition: opacity 1s ease-in-out; /* Transição suave de 1 segundo para a opacidade */
+}
+
+.carousel-item.active {
+    opacity: 1; /* Torna a imagem ativa visível */
+}
+
+.carousel-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-nav button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transição de cor ao passar o mouse */
+}
+
+.carousel-nav button:hover {
+    background-color: #e04a9e; /* Cor mais escura ao passar o mouse */
+}
+
+footer {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* --- Estilos para os Corações Flutuantes --- */
+.heart {
+    position: absolute;
+    background-color: #ff69b4; /* Cor do coração */
+    border-radius: 50%; /* Inicialmente um círculo */
+    animation: float 10s ease-in-out infinite; /* Animação principal de flutuar */
+    opacity: 0; /* Começa invisível */
+    filter: blur(2px); /* Efeito de desfoque para suavizar */
+    z-index: -1; /* Fica atrás do conteúdo principal */
+    transform-origin: 50% 50%; /* Ponto de origem da transformação */
+}
+
+/* Transforma o círculo em coração usando pseudo-elementos */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    background-color: #ff69b4; /* Mesma cor do coração */
+    border-radius: 50%; /* Faz bordas arredondadas */
+}
+
+.heart::before {
+    width: 100%;
+    height: 100%;
+    top: -50%; /* Desloca para cima */
+    left: 0;
+}
+
+.heart::after {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%; /* Desloca para a direita */
+}
+
+/* Definição da Animação de Flutuação */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0); /* Começa embaixo, invisível e pequeno */
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8; /* Atinge opacidade máxima */
+    }
+    90% {
+        opacity: 0.8; /* Mantém opacidade máxima */
+    }
+    100% {
+        transform: translateY(-100px) translateX(var(--end-x)) rotate(720deg) scale(1.2); /* Termina em cima, maior, girando e invisível */
+        opacity: 0;
+    }
+}
