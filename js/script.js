@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Lógica da Contagem de Tempo do Namoro ---
     // ATENÇÃO: Mude esta data para o dia exato do início do namoro de vocês (ANO-MÊS-DIA).
-    const startDate = new Date('2023-01-20T00:00:00'); // Exemplo: 20 de Janeiro de 2023
+    const startDate = new Date('2024-11-10T08:00:00'); // 
 
     const yearsSpan = document.getElementById('years');
     const monthsSpan = document.getElementById('months');
@@ -61,9 +61,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // ATENÇÃO: Adicione os caminhos das suas fotos aqui.
     // Certifique-se de que as imagens estão na pasta 'mozuda/images/'
     const carouselImages = [
-        'images/foto1.jpg',
-        'images/foto2.jpg',
-        'images/foto3.png', // Exemplo com outra extensão
+        'images/foto1.jpeg',
+        'images/foto2.jpeg',
+        'images/foto3.jpeg', // Exemplo com outra extensão
+        'images/foto4.jpeg', // Exemplo com outra extensão
+        'images/foto5.jpeg', // Exemplo com outra extensão
+        'images/foto6.jpeg', // Exemplo com outra extensão
+        'images/foto7.jpeg', // Exemplo com outra extensão
+        'images/foto8.jpeg', // Exemplo com outra extensão
+        'images/foto9.jpeg', // Exemplo com outra extensão
+        'images/foto10.jpeg', // Exemplo com outra extensão
+        'images/foto11.jpeg', // Exemplo com outra extensão
+        'images/foto12.jpeg', // Exemplo com outra extensão
+        'images/foto13.jpeg', // Exemplo com outra extensão
+        'images/foto14.jpeg', // Exemplo com outra extensão
+        'images/foto15.jpeg', // Exemplo com outra extensão
+        'images/foto16.jpeg', // Exemplo com outra extensão
+        'images/foto17.jpeg', // Exemplo com outra extensão
+        'images/foto18.jpeg', // Exemplo com outra extensão
+        'images/foto19.jpeg', // Exemplo com outra extensão
+        'images/foto20.jpeg', // Exemplo com outra extensão
+        'images/foto21.jpeg', // Exemplo com outra extensão
+        'images/foto22.jpeg', // Exemplo com outra extensão
+        'images/foto23.jpeg', // Exemplo com outra extensão
+        'images/foto24.jpeg', // Exemplo com outra extensão
+        'images/foto25.jpeg', // Exemplo com outra extensão
+        'images/foto26.jpeg', // Exemplo com outra extensão
+        'images/foto27.jpeg', // Exemplo com outra extensão
+        'images/foto28.jpeg', // Exemplo com outra extensão
+        'images/foto29.jpeg', // Exemplo com outra extensão
+        'images/foto30.jpeg', // Exemplo com outra extensão
+        'images/foto31.jpeg', // Exemplo com outra extensão
+        'images/foto32.jpeg', // Exemplo com outra extensão
+        'images/foto33.jpeg', // Exemplo com outra extensão
+        'images/foto34.jpeg', // Exemplo com outra extensão
+        'images/foto35.jpeg', // Exemplo com outra extensão
+        'images/foto36.jpeg', // Exemplo com outra extensão
+        'images/foto37.jpeg', // Exemplo com outra extensão
+        'images/foto38.jpeg', // Exemplo com outra extensão
         // Adicione mais fotos aqui: 'images/sua_outra_foto.jpg', etc.
     ];
 
